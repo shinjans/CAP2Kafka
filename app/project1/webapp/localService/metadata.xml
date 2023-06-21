@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+    <edmx:Reference Uri="https://oasis-tcs.github.io/odata-vocabularies/vocabularies/Org.OData.Capabilities.V1.xml">
+        <edmx:Include Alias="Capabilities" Namespace="Org.OData.Capabilities.V1"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/Common.xml">
+        <edmx:Include Alias="Common" Namespace="com.sap.vocabularies.Common.v1"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://oasis-tcs.github.io/odata-vocabularies/vocabularies/Org.OData.Core.V1.xml">
+        <edmx:Include Alias="Core" Namespace="Org.OData.Core.V1"/>
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema Namespace="CatalogService" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+            <EntityContainer Name="EntityContainer">
+                <EntitySet Name="Books" EntityType="CatalogService.Books"/>
+                <EntitySet Name="OrderHeader" EntityType="CatalogService.OrderHeader"/>
+            </EntityContainer>
+            <EntityType Name="Books">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.Int32" Nullable="false"/>
+                <Property Name="title" Type="Edm.String"/>
+                <Property Name="stock" Type="Edm.Int32"/>
+            </EntityType>
+            <EntityType Name="OrderHeader">
+                <Key>
+                    <PropertyRef Name="SALES_ORDER"/>
+                    <PropertyRef Name="SAP_INSTANCE"/>
+                </Key>
+                <Property Name="SALES_ORDER" Type="Edm.String" MaxLength="10" Nullable="false"/>
+                <Property Name="SAP_INSTANCE" Type="Edm.String" MaxLength="4" Nullable="false"/>
+                <Property Name="CREATED_ON" Type="Edm.Date"/>
+                <Property Name="ENTRY_TIME" Type="Edm.TimeOfDay"/>
+                <Property Name="CREATION_TIMESTAMP" Type="Edm.DateTimeOffset" Precision="7"/>
+                <Property Name="CREATED_BY" Type="Edm.String" MaxLength="12"/>
+                <Property Name="VALID_FROM" Type="Edm.Date"/>
+                <Property Name="VALID_TO" Type="Edm.Date"/>
+                <Property Name="DOCUMENT_DATE" Type="Edm.Date"/>
+                <Property Name="DOCUMENT_CAT" Type="Edm.String" MaxLength="1"/>
+                <Property Name="TRANSACT_GROUP" Type="Edm.String" MaxLength="1"/>
+                <Property Name="SALES_DOC_TYPE" Type="Edm.String" MaxLength="4"/>
+                <Property Name="ORDER_REASON" Type="Edm.String" MaxLength="3"/>
+                <Property Name="WARRANTY_START" Type="Edm.Date"/>
+                <Property Name="COLLECTIVE_NO" Type="Edm.String" MaxLength="10"/>
+                <Property Name="DELIVERY_BLOCK" Type="Edm.String" MaxLength="2"/>
+                <Property Name="BILLING_BLOCK" Type="Edm.String" MaxLength="2"/>
+                <Property Name="NET_VALUE" Type="Edm.Decimal" Scale="2" Precision="15"/>
+                <Property Name="DOC_CURRENCY" Type="Edm.String" MaxLength="5"/>
+                <Property Name="SALES_ORG" Type="Edm.String" MaxLength="4"/>
+                <Property Name="DISTR_CHANNEL" Type="Edm.String" MaxLength="2"/>
+                <Property Name="DIVISION" Type="Edm.String" MaxLength="2"/>
+                <Property Name="VALID_FROM_OUT_AGR" Type="Edm.Date"/>
+                <Property Name="VALID_TO_OUT_AGR" Type="Edm.Date"/>
+                <Property Name="DOC_CONDITION" Type="Edm.String" MaxLength="10"/>
+                <Property Name="REQUEST_DLV_DT" Type="Edm.Date"/>
+                <Property Name="PROP_DATE_TYPE" Type="Edm.String" MaxLength="1"/>
+                <Property Name="COMPLETE_DLV" Type="Edm.String" MaxLength="1"/>
+                <Property Name="ORIGINAL_SYSTEM" Type="Edm.String" MaxLength="9"/>
+                <Property Name="PRIC_PROCEDURE" Type="Edm.String" MaxLength="6"/>
+                <Property Name="SHIPPING_COND" Type="Edm.String" MaxLength="2"/>
+                <Property Name="ORD_REL_BILL_TY" Type="Edm.String" MaxLength="4"/>
+                <Property Name="PROBABILITY" Type="Edm.String" MaxLength="3"/>
+                <Property Name="DESCRIPTION" Type="Edm.String" MaxLength="40"/>
+                <Property Name="PO_NUMBER" Type="Edm.String" MaxLength="20"/>
+                <Property Name="PUR_ORD_TYPE" Type="Edm.String" MaxLength="4"/>
+                <Property Name="PO_DATE" Type="Edm.Date"/>
+                <Property Name="SUPPLEMENT" Type="Edm.String" MaxLength="4"/>
+                <Property Name="YOUR_REFERENCE" Type="Edm.String" MaxLength="12"/>
+                <Property Name="ORDERER_NAME" Type="Edm.String" MaxLength="35"/>
+                <Property Name="TELEPHONE" Type="Edm.String" MaxLength="16"/>
+                <Property Name="LAST_CONTACT_DT" Type="Edm.Date"/>
+                <Property Name="SOLD_TO_PARTY" Type="Edm.String" MaxLength="10"/>
+                <Property Name="COST_CENTER" Type="Edm.String" MaxLength="10"/>
+                <Property Name="STATS_CURRENCY" Type="Edm.String" MaxLength="5"/>
+                <Property Name="CHANGED_ON" Type="Edm.Date"/>
+                <Property Name="CUSTOMER_GRP_1" Type="Edm.String" MaxLength="3"/>
+                <Property Name="CO_AREA" Type="Edm.String" MaxLength="4"/>
+                <Property Name="EXCH_RATE_TYPE" Type="Edm.String" MaxLength="4"/>
+                <Property Name="CRED_CONTR_AREA" Type="Edm.String" MaxLength="4"/>
+                <Property Name="CREDIT_ACCOUNT" Type="Edm.String" MaxLength="10"/>
+                <Property Name="CUST_CRED_GRP" Type="Edm.String" MaxLength="4"/>
+                <Property Name="CRED_REP_GRP" Type="Edm.String" MaxLength="3"/>
+                <Property Name="RISK_CATEGORY" Type="Edm.String" MaxLength="3"/>
+                <Property Name="CURRENCY" Type="Edm.String" MaxLength="5"/>
+                <Property Name="RELEASE_DATE" Type="Edm.Date"/>
+                <Property Name="NEXT_CHECK" Type="Edm.Date"/>
+                <Property Name="NEXT_DATE" Type="Edm.Date"/>
+                <Property Name="CREDIT_VALUE" Type="Edm.Decimal" Scale="2" Precision="15"/>
+                <Property Name="HIER_TYPE_PRICING" Type="Edm.String" MaxLength="1"/>
+                <Property Name="USAGE" Type="Edm.String" MaxLength="3"/>
+                <Property Name="REFERENCE_DOC" Type="Edm.String" MaxLength="10"/>
+                <Property Name="CCODE_TO_BE_BILLED" Type="Edm.String" MaxLength="4"/>
+                <Property Name="ALT_TAX_CLASS" Type="Edm.String" MaxLength="1"/>
+                <Property Name="REFERENCE" Type="Edm.String" MaxLength="16"/>
+                <Property Name="ASSIGNMENT" Type="Edm.String" MaxLength="18"/>
+                <Property Name="PREC_DOC_CATEG" Type="Edm.String" MaxLength="1"/>
+                <Property Name="SEARCH_PROCED" Type="Edm.String" MaxLength="6"/>
+                <Property Name="PICK_UP_DATE" Type="Edm.Date"/>
+                <Property Name="PICK_UP_TIME_1" Type="Edm.TimeOfDay"/>
+                <Property Name="PICK_UP_TIME_2" Type="Edm.TimeOfDay"/>
+                <Property Name="PAYM_CARD_PLAN_NO" Type="Edm.String" MaxLength="10"/>
+                <Property Name="REQ_DELY_TIME" Type="Edm.TimeOfDay"/>
+                <Property Name="TAX_DEST_CNTRY" Type="Edm.String" MaxLength="3"/>
+                <Property Name="TAX_DEPART_CTY" Type="Edm.String" MaxLength="3"/>
+                <Property Name="CML_DLV_ORD_QTY_DATE" Type="Edm.Date"/>
+                <Property Name="MAT_AVAIL_DATE" Type="Edm.Date"/>
+                <Property Name="INT_ID" Type="Edm.String" MaxLength="22"/>
+                <Property Name="CONTAINS_DG" Type="Edm.String" MaxLength="1"/>
+                <Property Name="CRM_GUID" Type="Edm.String" MaxLength="70"/>
+                <Property Name="BILLING_PLAN_TYPE" Type="Edm.String" MaxLength="2"/>
+                <Property Name="POSTING_DATE" Type="Edm.Date"/>
+                <Property Name="EXPIRATION_DATE" Type="Edm.Date"/>
+                <Property Name="RESOLUTION_DATE" Type="Edm.Date"/>
+                <Property Name="EBS_SO_FOE_HEADER" Type="Edm.String" MaxLength="1"/>
+                <Property Name="EBS_BILLING_W_DELIV" Type="Edm.String" MaxLength="2"/>
+                <Property Name="EBS_PRICE_DATE_01" Type="Edm.Date"/>
+                <Property Name="EBS_PRICE_GROUP_01" Type="Edm.String" MaxLength="4"/>
+                <Property Name="EBS_PRC_GRP_04_SH" Type="Edm.String" MaxLength="4"/>
+                <Property Name="EBS_DELIVER_ON_ONLY" Type="Edm.String" MaxLength="1"/>
+                <Property Name="PALLET_JACK_RQD" Type="Edm.String" MaxLength="1"/>
+                <Property Name="EBS_LIFT_GATE_RQD" Type="Edm.String" MaxLength="1"/>
+                <Property Name="EBS_DELIVERY_APPT_RQD" Type="Edm.String" MaxLength="3"/>
+                <Property Name="EBS_DLV_CONT_PERS" Type="Edm.String" MaxLength="40"/>
+                <Property Name="EBS_DLV_CONT_INFO" Type="Edm.String" MaxLength="30"/>
+                <Property Name="CUST_LEAD_DIV" Type="Edm.String" MaxLength="2"/>
+                <Property Name="EBS_VISTEX_AGREEMENT" Type="Edm.String" MaxLength="10"/>
+                <Property Name="EBS_PRICING_PROGRAM" Type="Edm.String" MaxLength="2"/>
+                <Property Name="EBS_CORPORATE_SIGNED" Type="Edm.String" MaxLength="1"/>
+                <Property Name="EBS_LEASE_OWNER" Type="Edm.String" MaxLength="10"/>
+                <Property Name="EBS_AM_RESERVED_1" Type="Edm.String" MaxLength="40"/>
+                <Property Name="EBS_AM_RESERVED_2" Type="Edm.String" MaxLength="40"/>
+                <Property Name="EDI_BILL_TO" Type="Edm.String" MaxLength="40"/>
+                <Property Name="EBS_NEW_MACHINE" Type="Edm.String" MaxLength="1"/>
+                <Property Name="EBS_INSIDE_DELIVERY" Type="Edm.String" MaxLength="1"/>
+                <Property Name="EBS_NO_OF_STAIRS" Type="Edm.String" MaxLength="3"/>
+                <Property Name="EBS_WBRA_NUMBER" Type="Edm.String" MaxLength="15"/>
+                <Property Name="EBS_NIGHT_TIME_DELVY" Type="Edm.String" MaxLength="1"/>
+                <Property Name="EBS_DLV_CONTACT2" Type="Edm.String" MaxLength="60"/>
+                <Property Name="EBS_DLV_CONT_INFO2" Type="Edm.String" MaxLength="60"/>
+                <Property Name="EBS_RESIDENTIAL_CUST" Type="Edm.String" MaxLength="1"/>
+                <Property Name="EBS_COST_CENTER" Type="Edm.String" MaxLength="10"/>
+                <Property Name="CONT_PERS_EMAIL" Type="Edm.String" MaxLength="241"/>
+                <Property Name="INDICATOR" Type="Edm.String" MaxLength="1"/>
+                <Property Name="EDI_TRADING_PARTNER" Type="Edm.String" MaxLength="30"/>
+                <Property Name="EDI_SOLD_TO" Type="Edm.String" MaxLength="30"/>
+                <Property Name="EDI_SHIP_TO" Type="Edm.String" MaxLength="30"/>
+                <Property Name="IDOC_NUMBER" Type="Edm.String" MaxLength="30"/>
+                <Property Name="SOURCE_DOC_TYPE" Type="Edm.String" MaxLength="10"/>
+                <Property Name="SOURCE_DOC_NO" Type="Edm.String" MaxLength="40"/>
+                <Property Name="CUST_DIV_SHIP_TO" Type="Edm.String" MaxLength="2"/>
+                <Property Name="ATTRIBUTE_10" Type="Edm.String" MaxLength="3"/>
+                <Property Name="CUST_MOP_CAT_SHIP_TO" Type="Edm.String" MaxLength="3"/>
+                <Property Name="PRICE_GROUP" Type="Edm.String" MaxLength="2"/>
+                <Property Name="CUSTOMER_GROUP" Type="Edm.String" MaxLength="2"/>
+                <Property Name="PRICE_LIST" Type="Edm.String" MaxLength="2"/>
+                <Property Name="INCOTERMS" Type="Edm.String" MaxLength="3"/>
+                <Property Name="INCOTERMS_2" Type="Edm.String" MaxLength="28"/>
+                <Property Name="ORDER_COMBINAT" Type="Edm.String" MaxLength="1"/>
+                <Property Name="INVOICING_DATES" Type="Edm.String" MaxLength="2"/>
+                <Property Name="INV_LIST_SCHED" Type="Edm.String" MaxLength="2"/>
+                <Property Name="MANUAL_INV_MAINT" Type="Edm.String" MaxLength="1"/>
+                <Property Name="EXCH_RATE_ACCT" Type="Edm.Decimal" Scale="5" Precision="9"/>
+                <Property Name="FIXED_VAL_DATE" Type="Edm.Date"/>
+                <Property Name="PAYMENT_TERMS" Type="Edm.String" MaxLength="4"/>
+                <Property Name="PAYMENT_METHOD" Type="Edm.String" MaxLength="1"/>
+                <Property Name="ACC_ASSMT_GRP_CUST" Type="Edm.String" MaxLength="2"/>
+                <Property Name="EXCHANGE_RATE" Type="Edm.Decimal" Scale="5" Precision="9"/>
+                <Property Name="PRICING_DATE" Type="Edm.Date"/>
+                <Property Name="BILLING_DATE" Type="Edm.Date"/>
+                <Property Name="SERV_RENDERED" Type="Edm.Date"/>
+                <Property Name="EXCH_RATE_STATS" Type="Edm.Decimal" Scale="5" Precision="9"/>
+                <Property Name="BILLING_PLAN_NO" Type="Edm.String" MaxLength="10"/>
+                <Property Name="PAYM_GUAR_PROC" Type="Edm.String" MaxLength="6"/>
+                <Property Name="SHIP_TO_PO_NO" Type="Edm.String" MaxLength="35"/>
+                <Property Name="PURCH_ORDER_DATE" Type="Edm.Date"/>
+                <Property Name="PURCH_ORDER_TYPE" Type="Edm.String" MaxLength="4"/>
+                <Property Name="SHIP_TO_YOUR_REFERENCE" Type="Edm.String" MaxLength="12"/>
+                <Property Name="TRANSLATN_DATE" Type="Edm.Date"/>
+                <Property Name="TRANSLATN_DATE_2" Type="Edm.Date"/>
+                <Property Name="CONDITION_GRP_1" Type="Edm.String" MaxLength="2"/>
+                <Property Name="CONDITION_GRP_2" Type="Edm.String" MaxLength="2"/>
+                <Property Name="CONDITION_GRP_3" Type="Edm.String" MaxLength="2"/>
+                <Property Name="CONDITION_GRP_4" Type="Edm.String" MaxLength="2"/>
+                <Property Name="CONDITION_GRP_5" Type="Edm.String" MaxLength="2"/>
+                <Property Name="INDEX_BASE_DATE" Type="Edm.Date"/>
+                <Property Name="CUST_PO_NUMBER" Type="Edm.String" MaxLength="35"/>
+                <Property Name="ACCTG_INDICATOR" Type="Edm.String" MaxLength="2"/>
+                <Property Name="POD_RELEVANT" Type="Edm.String" MaxLength="1"/>
+                <Property Name="CGPL_GUID" Type="Edm.Binary" MaxLength="16"/>
+                <Property Name="DATA_AGING_FILTER" Type="Edm.Date"/>
+                <Property Name="BOOKING_FROM" Type="Edm.Date"/>
+                <Property Name="BOOKING_TO" Type="Edm.Date"/>
+                <Property Name="SHIPPING_FROM" Type="Edm.Date"/>
+                <Property Name="SHIPPING_TO" Type="Edm.Date"/>
+                <Property Name="BILLING_FROM" Type="Edm.Date"/>
+                <Property Name="BILLING_TO" Type="Edm.Date"/>
+                <Property Name="EXERCISE_TO" Type="Edm.Date"/>
+                <Property Name="EXERCISE_FROM" Type="Edm.Date"/>
+                <Property Name="PER_OF_PERF_START" Type="Edm.Date"/>
+                <Property Name="PER_OF_PERF_END" Type="Edm.Date"/>
+                <Property Name="MANDATE_REF" Type="Edm.String" MaxLength="35"/>
+                <Property Name="CONFIRMED" Type="Edm.String" MaxLength="1"/>
+                <Property Name="DELIVERY_STAT" Type="Edm.String" MaxLength="1"/>
+                <Property Name="OVERALL_DLV_ST" Type="Edm.String" MaxLength="1"/>
+                <Property Name="TOTAL_GDS_MVMT_STAT" Type="Edm.String" MaxLength="1"/>
+                <Property Name="BILLING_STAT" Type="Edm.String" MaxLength="1"/>
+                <Property Name="BILL_STAT_ORDER" Type="Edm.String" MaxLength="1"/>
+                <Property Name="POSTING_STAT" Type="Edm.String" MaxLength="1"/>
+                <Property Name="REJECTION_STAT" Type="Edm.String" MaxLength="1"/>
+                <Property Name="OVERALL_STAT" Type="Edm.String" MaxLength="1"/>
+                <Property Name="OVR_PICK_STAT" Type="Edm.String" MaxLength="1"/>
+                <Property Name="OVERALL_WM_STAT" Type="Edm.String" MaxLength="1"/>
+                <Property Name="ITEM_DATA" Type="Edm.String" MaxLength="1"/>
+                <Property Name="ITEM_DELIV_DATA" Type="Edm.String" MaxLength="1"/>
+                <Property Name="ITEM_BILL_DATA" Type="Edm.String" MaxLength="1"/>
+                <Property Name="HEADER_DATA" Type="Edm.String" MaxLength="1"/>
+                <Property Name="HEADER_DLV_DATA" Type="Edm.String" MaxLength="1"/>
+                <Property Name="HEADER_BILL_DAT" Type="Edm.String" MaxLength="1"/>
+                <Property Name="PRICING" Type="Edm.String" MaxLength="1"/>
+                <Property Name="DOCUMENT_OBJECT" Type="Edm.String" MaxLength="1"/>
+                <Property Name="TOTALS_STAT" Type="Edm.String" MaxLength="1"/>
+                <Property Name="INV_LIST_STAT" Type="Edm.String" MaxLength="1"/>
+                <Property Name="PACKING_STAT" Type="Edm.String" MaxLength="1"/>
+                <Property Name="DYNAMIC_CHECK" Type="Edm.String" MaxLength="1"/>
+                <Property Name="MAX_VALUE" Type="Edm.String" MaxLength="1"/>
+                <Property Name="OPEN_ITEMS" Type="Edm.String" MaxLength="1"/>
+                <Property Name="OLDEST_ITEM" Type="Edm.String" MaxLength="1"/>
+                <Property Name="PAYMENT_CARD" Type="Edm.String" MaxLength="1"/>
+                <Property Name="OVERALL_CRED_STAT" Type="Edm.String" MaxLength="1"/>
+                <Property Name="TRANSP_PLAN_STAT" Type="Edm.String" MaxLength="1"/>
+                <Property Name="PICK_CONFIRM_STAT" Type="Edm.String" MaxLength="1"/>
+                <Property Name="ALE_CONFIRM_STAT" Type="Edm.String" MaxLength="1"/>
+                <Property Name="SAP_RELEASE" Type="Edm.String" MaxLength="4"/>
+                <Property Name="IT_DATA_PACKAG" Type="Edm.String" MaxLength="1"/>
+                <Property Name="IT_DATA_PCK_PUTAWAY" Type="Edm.String" MaxLength="1"/>
+                <Property Name="ITEM_DATA_GM" Type="Edm.String" MaxLength="1"/>
+                <Property Name="HEAD_DATA_PCKG" Type="Edm.String" MaxLength="1"/>
+                <Property Name="HEAD_DATA_PCK_PUTAWY" Type="Edm.String" MaxLength="1"/>
+                <Property Name="HEAD_DATA_GM" Type="Edm.String" MaxLength="1"/>
+                <Property Name="OV_BILL_BLK_STAT" Type="Edm.String" MaxLength="1"/>
+                <Property Name="DLV_BLK_STAT" Type="Edm.String" MaxLength="1"/>
+                <Property Name="OVERALL_BLK_ST" Type="Edm.String" MaxLength="1"/>
+                <Property Name="POD_STAT" Type="Edm.String" MaxLength="1"/>
+                <Property Name="SAP_CRED_MGMT" Type="Edm.String" MaxLength="1"/>
+                <Property Name="CRMA_TE_STAT" Type="Edm.String" MaxLength="1"/>
+                <Property Name="SOLD_TO_ADDRESS" Type="Edm.String" MaxLength="10"/>
+                <Property Name="SHIP_TO_PARTY" Type="Edm.String" MaxLength="10"/>
+                <Property Name="SHIP_TO_ADDRESS" Type="Edm.String" MaxLength="10"/>
+                <Property Name="SHIP_TO_NAME_1" Type="Edm.String" MaxLength="40"/>
+                <Property Name="BILL_TO_PARTY" Type="Edm.String" MaxLength="10"/>
+                <Property Name="SALES_ORG_REGION" Type="Edm.String" MaxLength="20"/>
+                <Property Name="ITEM_COUNT" Type="Edm.Int32"/>
+                <Property Name="ORDER_STATUS" Type="Edm.Int32"/>
+            </EntityType>
+            <Annotations Target="CatalogService.EntityContainer/Books">
+                <Annotation Term="Capabilities.DeleteRestrictions">
+                    <Record Type="Capabilities.DeleteRestrictionsType">
+                        <PropertyValue Property="Deletable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.InsertRestrictions">
+                    <Record Type="Capabilities.InsertRestrictionsType">
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.UpdateRestrictions">
+                    <Record Type="Capabilities.UpdateRestrictionsType">
+                        <PropertyValue Property="Updatable" Bool="false"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="CatalogService.EntityContainer/OrderHeader">
+                <Annotation Term="Capabilities.DeleteRestrictions">
+                    <Record Type="Capabilities.DeleteRestrictionsType">
+                        <PropertyValue Property="Deletable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.InsertRestrictions">
+                    <Record Type="Capabilities.InsertRestrictionsType">
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.UpdateRestrictions">
+                    <Record Type="Capabilities.UpdateRestrictionsType">
+                        <PropertyValue Property="Updatable" Bool="false"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="CatalogService.OrderHeader/ENTRY_TIME">
+                <Annotation Term="Common.Label" String="Entry Time"/>
+            </Annotations>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

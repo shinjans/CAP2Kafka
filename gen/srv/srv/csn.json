@@ -1,0 +1,1784 @@
+{
+  "namespace": "my.bookshop",
+  "definitions": {
+    "my.bookshop.Books": {
+      "kind": "entity",
+      "elements": {
+        "ID": {
+          "key": true,
+          "type": "cds.Integer"
+        },
+        "title": {
+          "type": "cds.String"
+        },
+        "stock": {
+          "type": "cds.Integer"
+        }
+      }
+    },
+    "view.order.Header": {
+      "kind": "entity",
+      "elements": {
+        "SALES_ORDER": {
+          "key": true,
+          "type": "cds.String",
+          "length": 10
+        },
+        "SAP_INSTANCE": {
+          "key": true,
+          "type": "cds.String",
+          "length": 4
+        },
+        "CREATED_ON": {
+          "type": "cds.Date"
+        },
+        "ENTRY_TIME": {
+          "@title": "Entry Time",
+          "type": "cds.Time"
+        },
+        "CREATION_TIMESTAMP": {
+          "type": "cds.Timestamp"
+        },
+        "CREATED_BY": {
+          "type": "cds.String",
+          "length": 12
+        },
+        "VALID_FROM": {
+          "type": "cds.Date"
+        },
+        "VALID_TO": {
+          "type": "cds.Date"
+        },
+        "DOCUMENT_DATE": {
+          "type": "cds.Date"
+        },
+        "DOCUMENT_CAT": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "TRANSACT_GROUP": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "SALES_DOC_TYPE": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "ORDER_REASON": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "WARRANTY_START": {
+          "type": "cds.Date"
+        },
+        "COLLECTIVE_NO": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "DELIVERY_BLOCK": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "BILLING_BLOCK": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "NET_VALUE": {
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 2
+        },
+        "DOC_CURRENCY": {
+          "type": "cds.String",
+          "length": 5
+        },
+        "SALES_ORG": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "DISTR_CHANNEL": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "DIVISION": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "VALID_FROM_OUT_AGR": {
+          "type": "cds.Date"
+        },
+        "VALID_TO_OUT_AGR": {
+          "type": "cds.Date"
+        },
+        "DOC_CONDITION": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "REQUEST_DLV_DT": {
+          "type": "cds.Date"
+        },
+        "PROP_DATE_TYPE": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "COMPLETE_DLV": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "ORIGINAL_SYSTEM": {
+          "type": "cds.String",
+          "length": 9
+        },
+        "PRIC_PROCEDURE": {
+          "type": "cds.String",
+          "length": 6
+        },
+        "SHIPPING_COND": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "ORD_REL_BILL_TY": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "PROBABILITY": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "DESCRIPTION": {
+          "type": "cds.String",
+          "length": 40
+        },
+        "PO_NUMBER": {
+          "type": "cds.String",
+          "length": 20
+        },
+        "PUR_ORD_TYPE": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "PO_DATE": {
+          "type": "cds.Date"
+        },
+        "SUPPLEMENT": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "YOUR_REFERENCE": {
+          "type": "cds.String",
+          "length": 12
+        },
+        "ORDERER_NAME": {
+          "type": "cds.String",
+          "length": 35
+        },
+        "TELEPHONE": {
+          "type": "cds.String",
+          "length": 16
+        },
+        "LAST_CONTACT_DT": {
+          "type": "cds.Date"
+        },
+        "SOLD_TO_PARTY": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "COST_CENTER": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "STATS_CURRENCY": {
+          "type": "cds.String",
+          "length": 5
+        },
+        "CHANGED_ON": {
+          "type": "cds.Date"
+        },
+        "CUSTOMER_GRP_1": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "CO_AREA": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "EXCH_RATE_TYPE": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "CRED_CONTR_AREA": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "CREDIT_ACCOUNT": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "CUST_CRED_GRP": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "CRED_REP_GRP": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "RISK_CATEGORY": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "CURRENCY": {
+          "type": "cds.String",
+          "length": 5
+        },
+        "RELEASE_DATE": {
+          "type": "cds.Date"
+        },
+        "NEXT_CHECK": {
+          "type": "cds.Date"
+        },
+        "NEXT_DATE": {
+          "type": "cds.Date"
+        },
+        "CREDIT_VALUE": {
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 2
+        },
+        "HIER_TYPE_PRICING": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "USAGE": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "REFERENCE_DOC": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "CCODE_TO_BE_BILLED": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "ALT_TAX_CLASS": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "REFERENCE": {
+          "type": "cds.String",
+          "length": 16
+        },
+        "ASSIGNMENT": {
+          "type": "cds.String",
+          "length": 18
+        },
+        "PREC_DOC_CATEG": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "SEARCH_PROCED": {
+          "type": "cds.String",
+          "length": 6
+        },
+        "PICK_UP_DATE": {
+          "type": "cds.Date"
+        },
+        "PICK_UP_TIME_1": {
+          "type": "cds.Time"
+        },
+        "PICK_UP_TIME_2": {
+          "type": "cds.Time"
+        },
+        "PAYM_CARD_PLAN_NO": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "REQ_DELY_TIME": {
+          "type": "cds.Time"
+        },
+        "TAX_DEST_CNTRY": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "TAX_DEPART_CTY": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "CML_DLV_ORD_QTY_DATE": {
+          "type": "cds.Date"
+        },
+        "MAT_AVAIL_DATE": {
+          "type": "cds.Date"
+        },
+        "INT_ID": {
+          "type": "cds.String",
+          "length": 22
+        },
+        "CONTAINS_DG": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "CRM_GUID": {
+          "type": "cds.String",
+          "length": 70
+        },
+        "BILLING_PLAN_TYPE": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "POSTING_DATE": {
+          "type": "cds.Date"
+        },
+        "EXPIRATION_DATE": {
+          "type": "cds.Date"
+        },
+        "RESOLUTION_DATE": {
+          "type": "cds.Date"
+        },
+        "EBS_SO_FOE_HEADER": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "EBS_BILLING_W_DELIV": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "EBS_PRICE_DATE_01": {
+          "type": "cds.Date"
+        },
+        "EBS_PRICE_GROUP_01": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "EBS_PRC_GRP_04_SH": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "EBS_DELIVER_ON_ONLY": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "PALLET_JACK_RQD": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "EBS_LIFT_GATE_RQD": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "EBS_DELIVERY_APPT_RQD": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "EBS_DLV_CONT_PERS": {
+          "type": "cds.String",
+          "length": 40
+        },
+        "EBS_DLV_CONT_INFO": {
+          "type": "cds.String",
+          "length": 30
+        },
+        "CUST_LEAD_DIV": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "EBS_VISTEX_AGREEMENT": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "EBS_PRICING_PROGRAM": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "EBS_CORPORATE_SIGNED": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "EBS_LEASE_OWNER": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "EBS_AM_RESERVED_1": {
+          "type": "cds.String",
+          "length": 40
+        },
+        "EBS_AM_RESERVED_2": {
+          "type": "cds.String",
+          "length": 40
+        },
+        "EDI_BILL_TO": {
+          "type": "cds.String",
+          "length": 40
+        },
+        "EBS_NEW_MACHINE": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "EBS_INSIDE_DELIVERY": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "EBS_NO_OF_STAIRS": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "EBS_WBRA_NUMBER": {
+          "type": "cds.String",
+          "length": 15
+        },
+        "EBS_NIGHT_TIME_DELVY": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "EBS_DLV_CONTACT2": {
+          "type": "cds.String",
+          "length": 60
+        },
+        "EBS_DLV_CONT_INFO2": {
+          "type": "cds.String",
+          "length": 60
+        },
+        "EBS_RESIDENTIAL_CUST": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "EBS_COST_CENTER": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "CONT_PERS_EMAIL": {
+          "type": "cds.String",
+          "length": 241
+        },
+        "INDICATOR": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "EDI_TRADING_PARTNER": {
+          "type": "cds.String",
+          "length": 30
+        },
+        "EDI_SOLD_TO": {
+          "type": "cds.String",
+          "length": 30
+        },
+        "EDI_SHIP_TO": {
+          "type": "cds.String",
+          "length": 30
+        },
+        "IDOC_NUMBER": {
+          "type": "cds.String",
+          "length": 30
+        },
+        "SOURCE_DOC_TYPE": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "SOURCE_DOC_NO": {
+          "type": "cds.String",
+          "length": 40
+        },
+        "CUST_DIV_SHIP_TO": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "ATTRIBUTE_10": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "CUST_MOP_CAT_SHIP_TO": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "PRICE_GROUP": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "CUSTOMER_GROUP": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "PRICE_LIST": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "INCOTERMS": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "INCOTERMS_2": {
+          "type": "cds.String",
+          "length": 28
+        },
+        "ORDER_COMBINAT": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "INVOICING_DATES": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "INV_LIST_SCHED": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "MANUAL_INV_MAINT": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "EXCH_RATE_ACCT": {
+          "type": "cds.Decimal",
+          "precision": 9,
+          "scale": 5
+        },
+        "FIXED_VAL_DATE": {
+          "type": "cds.Date"
+        },
+        "PAYMENT_TERMS": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "PAYMENT_METHOD": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "ACC_ASSMT_GRP_CUST": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "EXCHANGE_RATE": {
+          "type": "cds.Decimal",
+          "precision": 9,
+          "scale": 5
+        },
+        "PRICING_DATE": {
+          "type": "cds.Date"
+        },
+        "BILLING_DATE": {
+          "type": "cds.Date"
+        },
+        "SERV_RENDERED": {
+          "type": "cds.Date"
+        },
+        "EXCH_RATE_STATS": {
+          "type": "cds.Decimal",
+          "precision": 9,
+          "scale": 5
+        },
+        "BILLING_PLAN_NO": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "PAYM_GUAR_PROC": {
+          "type": "cds.String",
+          "length": 6
+        },
+        "SHIP_TO_PO_NO": {
+          "type": "cds.String",
+          "length": 35
+        },
+        "PURCH_ORDER_DATE": {
+          "type": "cds.Date"
+        },
+        "PURCH_ORDER_TYPE": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "SHIP_TO_YOUR_REFERENCE": {
+          "type": "cds.String",
+          "length": 12
+        },
+        "TRANSLATN_DATE": {
+          "type": "cds.Date"
+        },
+        "TRANSLATN_DATE_2": {
+          "type": "cds.Date"
+        },
+        "CONDITION_GRP_1": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "CONDITION_GRP_2": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "CONDITION_GRP_3": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "CONDITION_GRP_4": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "CONDITION_GRP_5": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "INDEX_BASE_DATE": {
+          "type": "cds.Date"
+        },
+        "CUST_PO_NUMBER": {
+          "type": "cds.String",
+          "length": 35
+        },
+        "ACCTG_INDICATOR": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "POD_RELEVANT": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "CGPL_GUID": {
+          "type": "cds.Binary",
+          "length": 16
+        },
+        "DATA_AGING_FILTER": {
+          "type": "cds.Date"
+        },
+        "BOOKING_FROM": {
+          "type": "cds.Date"
+        },
+        "BOOKING_TO": {
+          "type": "cds.Date"
+        },
+        "SHIPPING_FROM": {
+          "type": "cds.Date"
+        },
+        "SHIPPING_TO": {
+          "type": "cds.Date"
+        },
+        "BILLING_FROM": {
+          "type": "cds.Date"
+        },
+        "BILLING_TO": {
+          "type": "cds.Date"
+        },
+        "EXERCISE_TO": {
+          "type": "cds.Date"
+        },
+        "EXERCISE_FROM": {
+          "type": "cds.Date"
+        },
+        "PER_OF_PERF_START": {
+          "type": "cds.Date"
+        },
+        "PER_OF_PERF_END": {
+          "type": "cds.Date"
+        },
+        "MANDATE_REF": {
+          "type": "cds.String",
+          "length": 35
+        },
+        "CONFIRMED": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "DELIVERY_STAT": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "OVERALL_DLV_ST": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "TOTAL_GDS_MVMT_STAT": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "BILLING_STAT": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "BILL_STAT_ORDER": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "POSTING_STAT": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "REJECTION_STAT": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "OVERALL_STAT": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "OVR_PICK_STAT": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "OVERALL_WM_STAT": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "ITEM_DATA": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "ITEM_DELIV_DATA": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "ITEM_BILL_DATA": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "HEADER_DATA": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "HEADER_DLV_DATA": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "HEADER_BILL_DAT": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "PRICING": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "DOCUMENT_OBJECT": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "TOTALS_STAT": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "INV_LIST_STAT": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "PACKING_STAT": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "DYNAMIC_CHECK": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "MAX_VALUE": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "OPEN_ITEMS": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "OLDEST_ITEM": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "PAYMENT_CARD": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "OVERALL_CRED_STAT": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "TRANSP_PLAN_STAT": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "PICK_CONFIRM_STAT": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "ALE_CONFIRM_STAT": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "SAP_RELEASE": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "IT_DATA_PACKAG": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "IT_DATA_PCK_PUTAWAY": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "ITEM_DATA_GM": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "HEAD_DATA_PCKG": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "HEAD_DATA_PCK_PUTAWY": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "HEAD_DATA_GM": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "OV_BILL_BLK_STAT": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "DLV_BLK_STAT": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "OVERALL_BLK_ST": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "POD_STAT": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "SAP_CRED_MGMT": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "CRMA_TE_STAT": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "SOLD_TO_ADDRESS": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "SHIP_TO_PARTY": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "SHIP_TO_ADDRESS": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "SHIP_TO_NAME_1": {
+          "type": "cds.String",
+          "length": 40
+        },
+        "BILL_TO_PARTY": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "SALES_ORG_REGION": {
+          "type": "cds.String",
+          "length": 20
+        },
+        "ITEM_COUNT": {
+          "type": "cds.Integer"
+        },
+        "ORDER_STATUS": {
+          "type": "cds.Integer"
+        }
+      }
+    },
+    "CatalogService": {
+      "@source": "srv/cat-service.cds",
+      "kind": "service"
+    },
+    "CatalogService.Books": {
+      "kind": "entity",
+      "@readonly": true,
+      "projection": {
+        "from": {
+          "ref": [
+            "my.bookshop.Books"
+          ]
+        }
+      },
+      "elements": {
+        "ID": {
+          "key": true,
+          "type": "cds.Integer"
+        },
+        "title": {
+          "type": "cds.String"
+        },
+        "stock": {
+          "type": "cds.Integer"
+        }
+      }
+    },
+    "CatalogService.OrderHeader": {
+      "kind": "entity",
+      "@readonly": true,
+      "projection": {
+        "from": {
+          "ref": [
+            "view.order.Header"
+          ]
+        }
+      },
+      "elements": {
+        "SALES_ORDER": {
+          "key": true,
+          "type": "cds.String",
+          "length": 10
+        },
+        "SAP_INSTANCE": {
+          "key": true,
+          "type": "cds.String",
+          "length": 4
+        },
+        "CREATED_ON": {
+          "type": "cds.Date"
+        },
+        "ENTRY_TIME": {
+          "@title": "Entry Time",
+          "type": "cds.Time"
+        },
+        "CREATION_TIMESTAMP": {
+          "type": "cds.Timestamp"
+        },
+        "CREATED_BY": {
+          "type": "cds.String",
+          "length": 12
+        },
+        "VALID_FROM": {
+          "type": "cds.Date"
+        },
+        "VALID_TO": {
+          "type": "cds.Date"
+        },
+        "DOCUMENT_DATE": {
+          "type": "cds.Date"
+        },
+        "DOCUMENT_CAT": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "TRANSACT_GROUP": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "SALES_DOC_TYPE": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "ORDER_REASON": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "WARRANTY_START": {
+          "type": "cds.Date"
+        },
+        "COLLECTIVE_NO": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "DELIVERY_BLOCK": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "BILLING_BLOCK": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "NET_VALUE": {
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 2
+        },
+        "DOC_CURRENCY": {
+          "type": "cds.String",
+          "length": 5
+        },
+        "SALES_ORG": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "DISTR_CHANNEL": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "DIVISION": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "VALID_FROM_OUT_AGR": {
+          "type": "cds.Date"
+        },
+        "VALID_TO_OUT_AGR": {
+          "type": "cds.Date"
+        },
+        "DOC_CONDITION": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "REQUEST_DLV_DT": {
+          "type": "cds.Date"
+        },
+        "PROP_DATE_TYPE": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "COMPLETE_DLV": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "ORIGINAL_SYSTEM": {
+          "type": "cds.String",
+          "length": 9
+        },
+        "PRIC_PROCEDURE": {
+          "type": "cds.String",
+          "length": 6
+        },
+        "SHIPPING_COND": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "ORD_REL_BILL_TY": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "PROBABILITY": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "DESCRIPTION": {
+          "type": "cds.String",
+          "length": 40
+        },
+        "PO_NUMBER": {
+          "type": "cds.String",
+          "length": 20
+        },
+        "PUR_ORD_TYPE": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "PO_DATE": {
+          "type": "cds.Date"
+        },
+        "SUPPLEMENT": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "YOUR_REFERENCE": {
+          "type": "cds.String",
+          "length": 12
+        },
+        "ORDERER_NAME": {
+          "type": "cds.String",
+          "length": 35
+        },
+        "TELEPHONE": {
+          "type": "cds.String",
+          "length": 16
+        },
+        "LAST_CONTACT_DT": {
+          "type": "cds.Date"
+        },
+        "SOLD_TO_PARTY": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "COST_CENTER": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "STATS_CURRENCY": {
+          "type": "cds.String",
+          "length": 5
+        },
+        "CHANGED_ON": {
+          "type": "cds.Date"
+        },
+        "CUSTOMER_GRP_1": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "CO_AREA": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "EXCH_RATE_TYPE": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "CRED_CONTR_AREA": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "CREDIT_ACCOUNT": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "CUST_CRED_GRP": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "CRED_REP_GRP": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "RISK_CATEGORY": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "CURRENCY": {
+          "type": "cds.String",
+          "length": 5
+        },
+        "RELEASE_DATE": {
+          "type": "cds.Date"
+        },
+        "NEXT_CHECK": {
+          "type": "cds.Date"
+        },
+        "NEXT_DATE": {
+          "type": "cds.Date"
+        },
+        "CREDIT_VALUE": {
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 2
+        },
+        "HIER_TYPE_PRICING": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "USAGE": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "REFERENCE_DOC": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "CCODE_TO_BE_BILLED": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "ALT_TAX_CLASS": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "REFERENCE": {
+          "type": "cds.String",
+          "length": 16
+        },
+        "ASSIGNMENT": {
+          "type": "cds.String",
+          "length": 18
+        },
+        "PREC_DOC_CATEG": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "SEARCH_PROCED": {
+          "type": "cds.String",
+          "length": 6
+        },
+        "PICK_UP_DATE": {
+          "type": "cds.Date"
+        },
+        "PICK_UP_TIME_1": {
+          "type": "cds.Time"
+        },
+        "PICK_UP_TIME_2": {
+          "type": "cds.Time"
+        },
+        "PAYM_CARD_PLAN_NO": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "REQ_DELY_TIME": {
+          "type": "cds.Time"
+        },
+        "TAX_DEST_CNTRY": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "TAX_DEPART_CTY": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "CML_DLV_ORD_QTY_DATE": {
+          "type": "cds.Date"
+        },
+        "MAT_AVAIL_DATE": {
+          "type": "cds.Date"
+        },
+        "INT_ID": {
+          "type": "cds.String",
+          "length": 22
+        },
+        "CONTAINS_DG": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "CRM_GUID": {
+          "type": "cds.String",
+          "length": 70
+        },
+        "BILLING_PLAN_TYPE": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "POSTING_DATE": {
+          "type": "cds.Date"
+        },
+        "EXPIRATION_DATE": {
+          "type": "cds.Date"
+        },
+        "RESOLUTION_DATE": {
+          "type": "cds.Date"
+        },
+        "EBS_SO_FOE_HEADER": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "EBS_BILLING_W_DELIV": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "EBS_PRICE_DATE_01": {
+          "type": "cds.Date"
+        },
+        "EBS_PRICE_GROUP_01": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "EBS_PRC_GRP_04_SH": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "EBS_DELIVER_ON_ONLY": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "PALLET_JACK_RQD": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "EBS_LIFT_GATE_RQD": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "EBS_DELIVERY_APPT_RQD": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "EBS_DLV_CONT_PERS": {
+          "type": "cds.String",
+          "length": 40
+        },
+        "EBS_DLV_CONT_INFO": {
+          "type": "cds.String",
+          "length": 30
+        },
+        "CUST_LEAD_DIV": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "EBS_VISTEX_AGREEMENT": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "EBS_PRICING_PROGRAM": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "EBS_CORPORATE_SIGNED": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "EBS_LEASE_OWNER": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "EBS_AM_RESERVED_1": {
+          "type": "cds.String",
+          "length": 40
+        },
+        "EBS_AM_RESERVED_2": {
+          "type": "cds.String",
+          "length": 40
+        },
+        "EDI_BILL_TO": {
+          "type": "cds.String",
+          "length": 40
+        },
+        "EBS_NEW_MACHINE": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "EBS_INSIDE_DELIVERY": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "EBS_NO_OF_STAIRS": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "EBS_WBRA_NUMBER": {
+          "type": "cds.String",
+          "length": 15
+        },
+        "EBS_NIGHT_TIME_DELVY": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "EBS_DLV_CONTACT2": {
+          "type": "cds.String",
+          "length": 60
+        },
+        "EBS_DLV_CONT_INFO2": {
+          "type": "cds.String",
+          "length": 60
+        },
+        "EBS_RESIDENTIAL_CUST": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "EBS_COST_CENTER": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "CONT_PERS_EMAIL": {
+          "type": "cds.String",
+          "length": 241
+        },
+        "INDICATOR": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "EDI_TRADING_PARTNER": {
+          "type": "cds.String",
+          "length": 30
+        },
+        "EDI_SOLD_TO": {
+          "type": "cds.String",
+          "length": 30
+        },
+        "EDI_SHIP_TO": {
+          "type": "cds.String",
+          "length": 30
+        },
+        "IDOC_NUMBER": {
+          "type": "cds.String",
+          "length": 30
+        },
+        "SOURCE_DOC_TYPE": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "SOURCE_DOC_NO": {
+          "type": "cds.String",
+          "length": 40
+        },
+        "CUST_DIV_SHIP_TO": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "ATTRIBUTE_10": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "CUST_MOP_CAT_SHIP_TO": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "PRICE_GROUP": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "CUSTOMER_GROUP": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "PRICE_LIST": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "INCOTERMS": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "INCOTERMS_2": {
+          "type": "cds.String",
+          "length": 28
+        },
+        "ORDER_COMBINAT": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "INVOICING_DATES": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "INV_LIST_SCHED": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "MANUAL_INV_MAINT": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "EXCH_RATE_ACCT": {
+          "type": "cds.Decimal",
+          "precision": 9,
+          "scale": 5
+        },
+        "FIXED_VAL_DATE": {
+          "type": "cds.Date"
+        },
+        "PAYMENT_TERMS": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "PAYMENT_METHOD": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "ACC_ASSMT_GRP_CUST": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "EXCHANGE_RATE": {
+          "type": "cds.Decimal",
+          "precision": 9,
+          "scale": 5
+        },
+        "PRICING_DATE": {
+          "type": "cds.Date"
+        },
+        "BILLING_DATE": {
+          "type": "cds.Date"
+        },
+        "SERV_RENDERED": {
+          "type": "cds.Date"
+        },
+        "EXCH_RATE_STATS": {
+          "type": "cds.Decimal",
+          "precision": 9,
+          "scale": 5
+        },
+        "BILLING_PLAN_NO": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "PAYM_GUAR_PROC": {
+          "type": "cds.String",
+          "length": 6
+        },
+        "SHIP_TO_PO_NO": {
+          "type": "cds.String",
+          "length": 35
+        },
+        "PURCH_ORDER_DATE": {
+          "type": "cds.Date"
+        },
+        "PURCH_ORDER_TYPE": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "SHIP_TO_YOUR_REFERENCE": {
+          "type": "cds.String",
+          "length": 12
+        },
+        "TRANSLATN_DATE": {
+          "type": "cds.Date"
+        },
+        "TRANSLATN_DATE_2": {
+          "type": "cds.Date"
+        },
+        "CONDITION_GRP_1": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "CONDITION_GRP_2": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "CONDITION_GRP_3": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "CONDITION_GRP_4": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "CONDITION_GRP_5": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "INDEX_BASE_DATE": {
+          "type": "cds.Date"
+        },
+        "CUST_PO_NUMBER": {
+          "type": "cds.String",
+          "length": 35
+        },
+        "ACCTG_INDICATOR": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "POD_RELEVANT": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "CGPL_GUID": {
+          "type": "cds.Binary",
+          "length": 16
+        },
+        "DATA_AGING_FILTER": {
+          "type": "cds.Date"
+        },
+        "BOOKING_FROM": {
+          "type": "cds.Date"
+        },
+        "BOOKING_TO": {
+          "type": "cds.Date"
+        },
+        "SHIPPING_FROM": {
+          "type": "cds.Date"
+        },
+        "SHIPPING_TO": {
+          "type": "cds.Date"
+        },
+        "BILLING_FROM": {
+          "type": "cds.Date"
+        },
+        "BILLING_TO": {
+          "type": "cds.Date"
+        },
+        "EXERCISE_TO": {
+          "type": "cds.Date"
+        },
+        "EXERCISE_FROM": {
+          "type": "cds.Date"
+        },
+        "PER_OF_PERF_START": {
+          "type": "cds.Date"
+        },
+        "PER_OF_PERF_END": {
+          "type": "cds.Date"
+        },
+        "MANDATE_REF": {
+          "type": "cds.String",
+          "length": 35
+        },
+        "CONFIRMED": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "DELIVERY_STAT": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "OVERALL_DLV_ST": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "TOTAL_GDS_MVMT_STAT": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "BILLING_STAT": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "BILL_STAT_ORDER": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "POSTING_STAT": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "REJECTION_STAT": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "OVERALL_STAT": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "OVR_PICK_STAT": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "OVERALL_WM_STAT": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "ITEM_DATA": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "ITEM_DELIV_DATA": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "ITEM_BILL_DATA": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "HEADER_DATA": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "HEADER_DLV_DATA": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "HEADER_BILL_DAT": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "PRICING": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "DOCUMENT_OBJECT": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "TOTALS_STAT": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "INV_LIST_STAT": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "PACKING_STAT": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "DYNAMIC_CHECK": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "MAX_VALUE": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "OPEN_ITEMS": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "OLDEST_ITEM": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "PAYMENT_CARD": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "OVERALL_CRED_STAT": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "TRANSP_PLAN_STAT": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "PICK_CONFIRM_STAT": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "ALE_CONFIRM_STAT": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "SAP_RELEASE": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "IT_DATA_PACKAG": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "IT_DATA_PCK_PUTAWAY": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "ITEM_DATA_GM": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "HEAD_DATA_PCKG": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "HEAD_DATA_PCK_PUTAWY": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "HEAD_DATA_GM": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "OV_BILL_BLK_STAT": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "DLV_BLK_STAT": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "OVERALL_BLK_ST": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "POD_STAT": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "SAP_CRED_MGMT": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "CRMA_TE_STAT": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "SOLD_TO_ADDRESS": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "SHIP_TO_PARTY": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "SHIP_TO_ADDRESS": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "SHIP_TO_NAME_1": {
+          "type": "cds.String",
+          "length": 40
+        },
+        "BILL_TO_PARTY": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "SALES_ORG_REGION": {
+          "type": "cds.String",
+          "length": 20
+        },
+        "ITEM_COUNT": {
+          "type": "cds.Integer"
+        },
+        "ORDER_STATUS": {
+          "type": "cds.Integer"
+        }
+      }
+    }
+  },
+  "meta": {
+    "creator": "CDS Compiler v3.9.2",
+    "flavor": "inferred"
+  },
+  "$version": "2.0"
+}

@@ -1,0 +1,23 @@
+{
+  "name": "ztestkafka1",
+  "version": "1.0.0",
+  "description": "A simple CAP project.",
+  "repository": "<Add your repository here>",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "@sap/cds": "^6",
+    "express": "^4",
+    "node-rdkafka": "^2.16.0",
+    "kafkajs":"^2.2.4",
+    "fs":"0.0.1-security"
+  },
+  "devDependencies": {
+    "@sap/ux-specification": "^1.108.5",
+    "sqlite3": "^5"
+  },
+  "scripts": {
+    "start": "cds-serve",
+    "watch-project1": "cds watch --open project1/webapp/index.html?sap-ui-xx-viewCache=false"
+  }
+}
